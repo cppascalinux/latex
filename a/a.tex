@@ -1,0 +1,161 @@
+\documentclass[12pt]{ctexart}
+\title{\textbf{NOIP模拟赛}}
+\author{GGN\&HJQ}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline 题目名称&crazy typer&treat guest&qwq similarity\\
+		\hline 源文件名&typer.cpp&guest.cpp&qwq.cpp\\
+		\hline 输入文件名&typer.in&guest.in&qwq.in\\
+		\hline 输出文件名&typer.out&guest.out&qwq.out\\
+		\hline 题目类型&传统&传统&传统\\
+		\hline 时间限制&1s&1s&1s\\
+		\hline 空间限制&512MB&512MB&512MB\\
+		\hline 测试点数目&10&10&10\\
+		\hline 每个测试点分值&10&10&10\\
+		\hline 编译选项&-lm&-lm&-lm\\
+		\hline
+	\end{tabular}
+\end{center}
+\textbf{注意事项}\\
+1.评测方式：全文比较，忽略行末空格和文末回车\\
+2.请不要直接从题面中复制样例
+\newpage
+\section{crazy typer}
+\subsection{题目背景}
+GGN是一个不喜欢出题的女孩子。为什么GGN不喜欢出题呢？是因为她不喜欢打字。为什么GGN不喜欢打字呢？是因为她打字太慢。直到有一天，F老师让GGN出一套难度适中的模拟赛，要求题面总字数尽可能多，机智的GGN决心通过“复制-粘贴”这一传统的方法凑够题面字数。
+\subsection{题目描述}
+起初，GGN的文件中只有一个字符，剪贴板中没有字符。每个时刻，GGN只能进行如下两种操作：\\
+1.“全选-复制”，即将文件中的内容全部拷贝进入剪贴板。\\
+2.“粘贴”，即在文件尾部追加剪贴板中的内容，但并不改变剪贴板中的内容。\\
+
+形式化的表述如下：
+假设GGN某次操作之前，文件中字符总数为$X$，剪贴板中字符总数为$Y$。执行这次操作后，文件中字符总数记为$X'$,剪贴板中字符总数记为$Y'$。\\
+若这次操作为“操作1”，则有$X'=X,Y'=Y$。若这次操作为“操作2”，则有$X'=X+Y,Y'=Y$。\\
+
+由于时间有限，所以她只能做$N$次操作。已知GGN的总操作次数为$N$，起初文章中有一个字符，剪贴板中没有字符。她希望你能帮她求出，进行$N$次操作后，文件中字符总数可能达到的最大值$T$。由于答案可能很大，而GGN又不喜欢写高精度，所以你只需要求出$T$除以$998244353$的余数。
+\subsection{输入格式}
+共一行，含一个整数$N$，表示GGN操作的总次数。
+\subsection{输出格式}
+共一行，含一个整数，即$T$除以998244353的余数。
+\subsection{输入输出样例}
+\begin{center}
+	\begin{tabular}{|p{6cm}|p{6cm}|}
+		\hline typer.in&typer.out\\
+		\hline7&12\\
+		\hline
+	\end{tabular}
+\end{center}
+\subsection{样例解释}
+在此给出一种可能的操作方式，操作序列以及每次操作后文件和缓冲区的字符数如下：
+\begin{center}
+	\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+		\hline 操作&文件&缓冲区\\
+		\hline 操作1&1&1\\
+		\hline 操作2&2&1\\
+		\hline 操作2&3&1\\
+		\hline 操作2&4&1\\
+		\hline 操作1&4&4\\
+		\hline 操作2&4&8\\
+		\hline 操作2&4&12\\
+		\hline
+	\end{tabular}
+\end{center}
+\subsection{数据范围}
+\noindent 对于30\%的数据，保证$N\leq25$。\\
+对于50\%的数据，保证$N\leq500$。\\
+对于80\%的数据，保证$N\leq10^5$。\\
+对于100\%的数据，保证$N\leq10^{12}$。
+
+\newpage
+\section{treat guest}
+\subsection{题目背景}
+“在那座阴雨的小城里我从未忘记你。”——《成都》
+
+GGN是一个热情好客的女孩子，她经常请她的男神YZB到家里玩耍。GGN家所在城市潮湿多雨，所以道路上经常会有积水。由于YZB非常的英勇，所以他是不怕路面积水的。但是GGN非常胆小，所以她不能通过有积水的路面。因此，当YZB要通过一条有积水的马路时，GGN就会对他说：“送君千里，终有一别。”然后转身离去，消失在暮色中，此后YZB就迎来了独自一人的旅程。由于GGN是个很贴心的女孩子，所以她希望YZB独自走过的路程尽可能短。此题由此展开。
+\subsection{题目描述}
+GGN和YZB家所在的城市可以用一张无向图表示，图中有$N$个点和$M$条边。其中，1号结点表示GGN的家，$N$号结点表示YZB的家。每条边表示一条可供行走的路，每条边都有两个属性$hight$和$len$，分别表示这条路的海拔和长度（这两条属性不随时间推移而改变）。一条路径的总路程即这条路径上所有边的$len$属性值之和。每天，GGN和YZB都会从GGN的家（1号结点）出发,在不经过有积水的边的条件下到达某个结点，此后YZB会从这个结点独自走到自己的家（$N$号结点），YZB独自行走时可以通过任何一条边。每天，给出城市中整体的水位$S$。如果一条边的$height$属性值大于等于$S$，那么在这一天中，这条边是没有积水的；如果一条边的$height$属性小于$S$，那么在这一天中，这条边是有积水的，GGN不能通过这条边。给出图的所有信息、总天数、以及每天的积水深度，计算每天YZB独自走过总路程的最小值。特殊地，如果存在一条从1号结点到$N$号结点的路径，满足这条路径上的所有的边都没有积水，那么YZB独自走过总路程的最小值为0。
+\subsection{输入格式}
+\noindent 第一行，包含两个整数$N,M$，表示图中结点数量以及边的数量。\\
+接下来的$M$行，每行四个整数$from_i,to_i,height_i,len_i$，分别表示这条无向边所连接的两个点以及这条边的海拔和长度。\\
+接下来1行，包含一个正整数$D$，表示总天数。\\
+接下来1行，$D$个整数，其中第$i$个数表示第$i$天的积水深度$S_i$。
+\subsection{输出格式}
+共一行，包含$D$个整数，其中第$i$个整数表示第$i$天YZB独自走过的总路程的最小值。
+\subsection{输入输出样例}
+\begin{tabular}{|p{6cm}|p{6cm}|}
+	\hline guest.in&guest.out\\
+	\hline5 6&0 6 10 12\\
+			1 2 3 1&\\
+			2 3 3 2&\\
+			3 4 2 4&\\
+			4 5 1 6&\\
+			1 3 3 3&\\
+			4 2 2 5&\\
+			4&\\
+			1 2 3 4&\\
+	\hline
+\end{tabular}
+\subsection{样例解释}
+第一天，所有的边都没有积水，YZB独自走过的最短路程长度是0。
+
+第二天，GGN先陪YZB走$1\to3\to4$，然后YZB独自走$4\to5$，独自走过的总路程为6（方案不唯一）。
+
+第三天，GGN先陪YZB走$1\to3$，然后YZB独自走$3\to4\to5$，独自走过的总路程为10。
+
+第四天，所有的道路都有积水，YZB独自走$1\to3\to4\to5$，独自走过的总路程为12。
+\subsection{数据范围}
+\noindent 对于50\%的数据，$N\leq500,M\leq1000,D\leq500$。\\
+对于100\%的数据，$2\leq N\leq10^5,1\leq M\leq4\times10^5,1\leq D\leq10^5,0<height_i<2^{31}-1,0<len_i<10^7$。
+
+\newpage
+\section{qwq similarity}
+\subsection{题目背景}
+HJQwQ不喜欢出题，不热情好客，也不是女孩子，但他喜欢打MC。一天，F老师让他出一套难度适中的模拟赛。但HJQwQ并不想出题，于是就随便抄了几道原题，然后就去打MC了。F老师知道之后非常不爽，于是她想出了题目查重的办法：将每道题目看成一个序列。她认为一个题目（一个短序列）和题库（一个长序列）的最长公共\textbf{子序列}越长，这道题目的抄袭程度就越高。她想知道对于每道题，HJQwQ到底抄袭了多少？
+\subsection{题目描述}
+我们将问题简化为：给你一个长为$N$的序列$S$，有$M$次询问，第i次询问会给出一个序列$T_i$，你需要回答$S$与$T_i$的最长公共\textbf{子序列（注意不是子串）}的长度。
+\subsection{输入格式}
+\noindent 第1行2个用空格分隔的正整数$N,M$\\
+第2行$N$个用空格分隔的正整数$S_i$\\
+第$3\sim(M+2)$行，每行第1个正整数表示$T_i$的长度$L_i$，其后有$L_i$个用空格分隔的正整数$T_{ij}$
+\subsection{输出格式}
+共$M$行，第$i$行输出一个非负整数$ans_i$表示$S$与$T_i$的最长公共\textbf{子序列}的长度，若没有公共子序列则输出0
+\subsection{输入输出样例}
+\begin{tabular}{|p{6cm}|p{6cm}|}
+	\hline qwq.in&qwq.out\\
+	\hline  10 5&1\\
+			5 1 4 3 2 6 5 5 0 7&0\\
+			1 5&3\\
+			1 10&3\\
+			4 5 0 4 7&5\\
+			5 4 1 2 3 5&\\
+			5 2 6 5 0 7&\\
+	\hline
+\end{tabular}
+\subsection{样例解释}
+\noindent 第一次询问的答案为1，一种方案为[5]\\
+第二次询问的数10未在$S$中出现过，故答案为0\\
+第三次询问的答案为3，一种方案为[5,0,7]\\
+第四次询问的答案为3，一种方案为[4,2,5]\\
+第五次询问的答案为5，一种方案为[2,6,5,0,7]
+\subsection{数据范围}
+\begin{center}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline 测试点编号&$N$&$M$&$L_i$&$S_i,T_{ij}$\\
+		\hline 1&$\leq10$&$\leq100$&$\leq5$&$\leq10^6$\\
+		\hline 2&$\leq10$&$\leq100$&$\leq5$&$\leq10^6$\\
+		\hline 3&$\leq1000$&$\leq1000$&$\leq5$&$\leq10^6$\\
+		\hline 4&$\leq1000$&$\leq1000$&$\leq5$&$\leq10^6$\\
+		\hline 5&$\leq1000$&$\leq1000$&$\leq5$&$\leq10^6$\\
+		\hline 6&$\leq10^6$&$\leq10000$&$=1$&$\leq10^6$\\
+		\hline 7&$\leq10^6$&$\leq10000$&$\leq 5$&$\leq2$\\
+		\hline 8&$\leq10^6$&$\leq10000$&$\leq 5$&$\leq10^6$\\
+		\hline 9&$\leq10^6$&$\leq10000$&$\leq 5$&$\leq10^6$\\
+		\hline 10&$\leq10^6$&$\leq10000$&$\leq 5$&$\leq10^6$\\
+		\hline
+	\end{tabular}
+\end{center}
+对于100\%的数据，有$1\le N,S_i,T_{ij}\le10^6,1\le M\le10000,1\le L_i\le5$
+\end{document}
