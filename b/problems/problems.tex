@@ -101,12 +101,12 @@ $k=3$时,抽$v_1+v_3+v_5=8$最大
 		\hline 测试点编号&$n$&$v_i$\\
 		\hline 1,2&$\le10$&$\le10^9$\\
 		\hline 3,4,5&$\le2000$&$\le10^9$\\
-		\hline 6,7&$\le10^6$&$\le2$\\
-		\hline 8,9,10&$\le10^6$&$\le10^9$\\
+		\hline 6,7&$\le2\times10^5$&$\le2$\\
+		\hline 8,9,10&$\le2\times10^5$&$\le10^9$\\
 		\hline
 	\end{tabular}
 \end{center}
-对于100\%的数据,有$1\le n\le 10^6,1\le v_i\le 10^9$
+对于100\%的数据,有$1\le n\le2\times10^5,1\le v_i\le10^9$
 \newpage
 \section{归程}
 \subsection{题目背景}
@@ -165,12 +165,12 @@ HJQwQ从1号点出发,按照这个规则不断前进,直到一个没有出边的
 		\hline 测试点编号&$n$&$m$&特殊性质\\
 		\hline 1,2&$\le10$&$\le45$&$l=1$\\
 		\hline 3,4,5&$\le1000$&$\le2000$&无\\
-		\hline 6,7&$\le10^6$&$=n-1$&1号点向$2\sim n$号点各连一条边\\
-		\hline 8,9,10&$\le10^6$&$\le2\times10^6$&无\\
+		\hline 6,7&$\le2\times10^5$&$=n-1$&1号点向$2\sim n$号点各连一条边\\
+		\hline 8,9,10&$\le2\times10^5$&$\le4\times10^5$&无\\
 		\hline
 	\end{tabular}
 \end{center}
-对于100\%的数据，有$1\le n\le 10^6,1\le m\le 2\times10^6,1\le w\le 10,-10\le l\le 10$,保证图为有向无环图,且图内无重边,自环
+对于100\%的数据，有$1\le n\le2\times10^5,1\le m\le4\times10^5,1\le w\le10,-10\le l\le10$,保证图为有向无环图,且图内无重边,自环
 \subsection{提示}
 本题输入数据量较大,请使用快速的读入方式
 \end{document}

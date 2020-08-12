@@ -58,8 +58,8 @@ int main()
 		DB v=cal(i);
 		if(v<ans)
 			ans=v,ai=i;
-		printf("\t\t\\hline %d&%.3lf\\\\\n",i,v);
+		// printf("\t\t\\hline %d&%.3lf\\\\\n",i,v);
 	}
-	// printf("%d %.2lf\n",ai,ans);
+	printf("%.3lf",ans);
 	return 0;
 }
