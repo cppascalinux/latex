@@ -7,7 +7,7 @@
 #include<set>
 #define PII pair<int,int>
 using namespace std;
-int n=2000,m=4000,tot=0;
+int n=200000,m=199999,tot=0;
 int dep[1000009];
 set<PII> s;
 int main()
@@ -18,7 +18,10 @@ int main()
 	for(int i=2;i<=n;i++)
 	{
 		int fa=max(1,i-(int)(rnd()%5)-1);
+		// fa=1;
 		int w=rnd()%10+1,l=rnd()%21-10;
+		// if(rnd()%10000!=0)
+		// 	w=1,l=-9;
 		dep[i]=dep[fa]+1;
 		s.insert(PII(fa,i));
 		printf("%d %d %d %d\n",fa,i,w,l);

@@ -87,6 +87,7 @@ void solve()
 		}
 	if(abs(ans)<=EPS)
 		ans=0;
+	cerr<<g[1]<<" "<<ans;
 	printf("%.3lf",ans);
 }
 void dbg()
