@@ -2,6 +2,8 @@
 \usepackage{amsmath}
 \usepackage{wasysym}
 \usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subfigure}
 \title{\textbf{NOIP模拟赛2}}
 \author{GGN\&HJQ}
 \date{2020年8月16日}
@@ -34,7 +36,27 @@
 \subsection{题目背景}
 HJQwQ在玩多米诺骨牌,但他已经玩腻了摆放然后推倒的玩法.于是他找来了国际象棋棋盘,开始往上面摆骨牌.这时他突发奇想:棋盘上最多能摆多少个不相邻的骨牌?但是他还要去打MC,于是把这个问题留给了你
 \subsection{题目描述}
-有一个$n$行$m$列($n*m$)的棋盘,在它的上面放若干张1*2或2*1的骨牌,要求骨牌必须完全位于棋盘内,每个格子至多只被一张骨牌覆盖,且这些骨牌两两不相邻(我们定义两张骨牌是"相邻"的,当且仅当这两个骨牌至少有一条公共边或一个公共顶点,如图1-1和1-2中的两个骨牌是相邻的,而1-3中的两个骨牌不相邻),求最多可以摆放骨牌的数目
+有一个$n$行$m$列($n*m$)的棋盘,在它的上面放若干张1*2或2*1的骨牌,要求骨牌必须完全位于棋盘内,每个格子至多只被一张骨牌覆盖,且这些骨牌两两不相邻(我们定义两张骨牌是"相邻"的,当且仅当这两个骨牌至少有一条公共边或一个公共顶点,如图1和图2中的两个骨牌是相邻的,而图3中的两个骨牌不相邻),求最多可以摆放骨牌的数目
+
+\begin{figure}[htbp]
+	\centering
+	\begin{minipage}[t]{0.3\textwidth}
+		\centering
+		\includegraphics{pictures/1-1.png}
+		\caption{}
+	\end{minipage}
+	\begin{minipage}[t]{0.3\textwidth}
+		\centering
+		\includegraphics{pictures/1-2.png}
+		\caption{}
+	\end{minipage}
+	\begin{minipage}[t]{0.3\textwidth}
+		\centering
+		\includegraphics{pictures/1-3.png}
+		\caption{}
+	\end{minipage}
+\end{figure}
+
 \subsection{输入格式}
 第一行一个正整数$T$,表示数据组数
 接下来$T$行,每行两个正整数$n,m$
@@ -54,7 +76,42 @@ HJQwQ在玩多米诺骨牌,但他已经玩腻了摆放然后推倒的玩法.于�
 	\end{tabular}
 \end{center}
 \subsection{样例解释}
-对于5组数据,各给出一种可行的方案(图2-1$\to$2-5),不难证明都是最大方案
+对于5组数据,各给出一种可行的方案(图4$\to$图8),不难证明都是最大方案
+
+\begin{figure}[htbp]
+	\centering
+	\begin{minipage}[t]{0.32\textwidth}
+		\centering
+		\includegraphics[width=0.5\textwidth]{pictures/2-1.png}
+		\caption{}
+	\end{minipage}
+	\begin{minipage}[t]{0.32\textwidth}
+		\centering
+		\includegraphics[width=0.5\textwidth]{pictures/2-2.png}
+		\caption{}
+	\end{minipage}
+	\begin{minipage}[t]{0.32\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{pictures/2-3.png}
+		\caption{}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\begin{minipage}[t]{0.49\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{pictures/2-4.png}
+		\caption{}
+	\end{minipage}
+	\begin{minipage}[t]{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{pictures/2-5.png}
+		\caption{}
+	\end{minipage}
+\end{figure}
+
+
 \subsection{数据范围}
 \begin{center}
 	\begin{tabular}{|c|c|c|}
