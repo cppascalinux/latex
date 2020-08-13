@@ -70,7 +70,7 @@ HJQwQ在玩多米诺骨牌,但他已经玩腻了摆放然后推倒的玩法.于�
 \newpage
 \section{抽卡}
 \subsection{题目背景}
-HJQwQ在和GGN玩一个抽卡游戏.他们的面前摆放着$n$张背面朝上的卡,每张卡的正面印着一个价值$v_i$.HJQwQ可以从中抽走$k$张,并获得这些卡上所有的价值.擅长出老千的HJQwQ早就看穿了每张卡的价值,然而机智的GGN更早就料到HJQwQ会出老千,于是他又加了一条规则:取出的k张卡的位置必须两两不相邻.这下HJQwQ方了:他该抽走哪些卡,才能使的自己获得的总价值最大?
+HJQwQ在和GGN玩一个抽卡游戏.他们的面前摆放着$n$张背面朝上的卡,每张卡的正面印着一个价值$v_i$. HJQwQ可以从中抽走$k$张,并获得这些卡上所有的价值.擅长出老千的HJQwQ早就看穿了每张卡的价值,然而机智的GGN更早就料到HJQwQ会出老千,于是他又加了一条规则:取出的k张卡的位置必须两两不相邻.这下HJQwQ方了:他该抽走哪些卡,才能使的自己获得的总价值最大?
 \subsection{题目描述}
 有一个长为$n$的数组$v_i$,请从中选出$k$个不相邻的位置,使得这些位置的和最大,并输出这个和,你需要对$k\in\left[1,\lfloor\frac{n+1}{2}\rfloor\right]$都输出一个答案
 \subsection{输入格式}
@@ -79,22 +79,34 @@ HJQwQ在和GGN玩一个抽卡游戏.他们的面前摆放着$n$张背面朝上�
 第二行$n$个用空格分隔的正整数$v_1\sim v_n$
 \subsection{输出格式}
 共$\lfloor\frac{n+1}{2}\rfloor$行,每行一个整数,第$i$行的整数表示$k=i$时的答案
-\subsection{样例}
+\subsection{输入输出样例}
+\subsubsection{样例1}
 \begin{center}
 	\begin{tabular}{|p{6cm}|p{6cm}|}
 		\hline card.in&card.out\\
-		\hline	5&5\\
-				1 5 3 3 4&9\\
-				&8\\
+		\hline	10&9\\
+				7 3 2 7 2 7 4 9 9 1&16\\
+				&23\\
+				&30\\
+				&31\\
 		\hline
 	\end{tabular}
 \end{center}
-\subsection{样例解释}
-$k=1$时,抽$v_2=5$最大
+见下发文件中的card1.in/card1.out
+\subsubsection{样例解释}
+$k=1$时,抽$v_8=9$最大
 
-$k=2$时,抽$v_2+v_5=9$最大
+$k=2$时,抽$v_1+v_9=16$最大
 
-$k=3$时,抽$v_1+v_3+v_5=8$最大
+$k=3$时,抽$v_1+v_4+v_9=23$最大
+
+$k=4$时,抽$v_1+v_4+v_6+v_8=30$最大
+
+$k=5$时,抽$v_1+v_4+v_6+v_8+v_{10}=31$最大
+\subsubsection{样例2}
+见下发文件中的card2.in/card2.out,此样例数据范围与测试点3相同
+\subsubsection{样例3}
+见下发文件中的card3.in/card3.out,此样例数据范围与测试点8相同
 \subsection{数据范围}
 \begin{center}
 	\begin{tabular}{|c|c|c|}
@@ -114,7 +126,7 @@ HJQwQ在地下挖了一背包的铁和钻石,打算坐矿车回家,原本的铁�
 
 HJQwQ自闭了,但他也不是无计可施:他可以使用魔法,但由于他的法力太弱,只能从图中删除至多一条边(也可以不删).他想知道,怎样才能使旅程尽快结束(期望意义下)?
 \subsection{题目描述}
-形式化的表述如下:有一张$n$个点,$m$条边的有向无环图$G(V,E)$,每条边$(u,v)$有一个边权$w_{(u,v)}$和一个长度$l_{(u,v)}$\textbf{(可能为负)},若HJQwQ在某个点$u$,则他选择边$(u,v)$的概率为$\frac{w_{(u,v)}}{\sum\limits_{(u,i)\in E}w_{(u,i)}}$,即当前出边的权值除以所有出边权值之和.
+形式化的表述如下:有一张$n$个点, $m$条边的有向无环图$G(V,E)$,每条边$(u,v)$有一个边权$w_{(u,v)}$和一个长度$l_{(u,v)}$\textbf{(可能为负)},若HJQwQ在某个点$u$,则他选择边$(u,v)$的概率为$\frac{w_{(u,v)}}{\sum\limits_{(u,i)\in E}w_{(u,i)}}$,即当前出边的权值除以所有出边权值之和.
 
 HJQwQ从1号点出发,按照这个规则不断前进,直到一个没有出边的点才停止,他经过的总路程为他经过的边的长度$l(u,v)$之和.在出发之前,他可以选择一条边$(u,v)$,并从图中删去这条边(也可以不选).请求出他经过的总路程长度的期望值最小是多少.
 \subsection{输入格式}
@@ -154,11 +166,9 @@ HJQwQ从1号点出发,按照这个规则不断前进,直到一个没有出边的
 	\end{tabular}
 \end{center}
 \subsubsection{样例2}
-见下发文件的return2.in和return2.out，此样例数据范围与测试点1相同
+见下发文件的return2.in和return2.out，此样例数据范围与测试点3相同
 \subsubsection{样例3}
-见下发文件的return3.in和return3.out，此样例数据范围与测试点3相同
-\subsubsection{样例4}
-见下发文件的return4.in和return4.out，此样例数据范围与测试点8相同
+见下发文件的return3.in和return3.out，此样例数据范围与测试点8相同
 \subsection{数据范围}
 \begin{center}
 	\begin{tabular}{|c|c|c|}
@@ -171,6 +181,4 @@ HJQwQ从1号点出发,按照这个规则不断前进,直到一个没有出边的
 	\end{tabular}
 \end{center}
 对于100\%的数据，有$1\le n\le2\times10^5,1\le m\le4\times10^5,1\le w\le10,-10\le l\le10$,保证图为有向无环图,且图内无重边,自环
-\subsection{提示}
-本题输入数据量较大,请使用快速的读入方式
 \end{document}

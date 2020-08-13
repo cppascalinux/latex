@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2020.8.5)  12 AUG 2020 20:19
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2020.8.5)  13 AUG 2020 09:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1321,7 +1321,7 @@ File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 ]
 LaTeX Font Info:    Font shape `TU/FandolSong-Regular(0)/m/sl' in size <12> not available
 (Font)              Font shape `TU/FandolSong-Regular(0)/m/it' tried instead on input line 54.
- [2] [3] [4] [5] [6] [7] [8] (./problems.aux) ) 
+ [2] [3] [4] [5] [6] [7] [8] [9] (./problems.aux) ) 
 Here is how much of TeX's memory you used:
  21301 strings out of 493007
  445516 string characters out of 6136720
@@ -1331,4 +1331,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  57i,8n,74p,10459b,289s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on problems.pdf (8 pages).
+Output written on problems.pdf (9 pages).
