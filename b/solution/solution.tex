@@ -2,6 +2,9 @@
 \usepackage{ctex}
 \usepackage{indentfirst}
 \usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subfigure}
 \usetheme{CambridgeUS}
 \author{HJQwQ}
 \title{题目讲评}
@@ -45,7 +48,19 @@
 				故两个问题中能放置骨牌的最大数目相同,这样我们就完成了对问题的转化
 			\end{frame}
 			\begin{frame}\frametitle{良心插图}
-				(此处应有2张图片)
+				\begin{figure}[htbp]
+					\centering
+					\begin{minipage}[t]{0.49\textwidth}
+						\centering
+						\includegraphics[width=0.6\textwidth]{pictures/1-1.png}
+					\end{minipage}
+					\begin{minipage}[t]{0.49\textwidth}
+						\centering
+						\includegraphics[width=0.7\textwidth]{pictures/1-2.png}
+					\end{minipage}
+				\end{figure}
+
+				原问题中$n=6,m=6$的最优方案与新问题中的最优方案可相互转化
 			\end{frame}
 			\begin{frame}\frametitle{$r=2$或$r=3$时..}
 				接下来我们讨论的都是转化后的问题\\
@@ -64,7 +79,38 @@
 				\textbf{故$r=6$时一定可以填满,$c=6$时同理}
 			\end{frame}
 			\begin{frame}\frametitle{良心插图}
-				(此处应有6张图片)
+				\begin{figure}[htbp]
+					\centering
+					\begin{minipage}[t]{0.32\textwidth}
+						\centering
+						\includegraphics[height=0.7\textwidth]{pictures/2-1.png}
+					\end{minipage}
+					\begin{minipage}[t]{0.32\textwidth}
+						\centering
+						\includegraphics[height=0.7\textwidth]{pictures/2-2.png}
+					\end{minipage}
+					\begin{minipage}[t]{0.32\textwidth}
+						\centering
+						\includegraphics[height=0.7\textwidth]{pictures/2-3.png}
+					\end{minipage}
+				\end{figure}
+				\begin{figure}[htbp]
+					\centering
+					\begin{minipage}[t]{0.32\textwidth}
+						\centering
+						\includegraphics[height=0.7\textwidth]{pictures/2-4.png}
+					\end{minipage}
+					\begin{minipage}[t]{0.32\textwidth}
+						\centering
+						\includegraphics[height=0.7\textwidth]{pictures/2-5.png}
+					\end{minipage}
+					\begin{minipage}[t]{0.32\textwidth}
+						\centering
+						\includegraphics[height=0.7\textwidth]{pictures/2-6.png}
+					\end{minipage}
+				\end{figure}
+
+				\centering{六种情况对应的方案}
 			\end{frame}
 			\begin{frame}\frametitle{$r=4$时}
 				由于$4\times6$的可以填满,所以只需要讨论$c\bmod6$的值,找到一种填的方法使留空的格子数小于6\\
@@ -76,7 +122,30 @@
 				若$c\bmod6=5$,放两个$2\times3$和一个$3\times2$\\
 			\end{frame}
 			\begin{frame}\frametitle{良心插图}
-				(此处应有6张图片)
+				\begin{figure}[htbp]
+					\centering
+					\begin{minipage}[t]{0.48\textwidth}
+						\centering
+						\includegraphics[height=0.5\textwidth]{pictures/3-1.png}
+					\end{minipage}
+					\begin{minipage}[t]{0.48\textwidth}
+						\centering
+						\includegraphics[height=0.5\textwidth]{pictures/3-2.png}
+					\end{minipage}
+				\end{figure}
+				\begin{figure}[htbp]
+					\centering
+					\begin{minipage}[t]{0.48\textwidth}
+						\centering
+						\includegraphics[height=0.5\textwidth]{pictures/3-3.png}
+					\end{minipage}
+					\begin{minipage}[t]{0.48\textwidth}
+						\centering
+						\includegraphics[height=0.5\textwidth]{pictures/3-4.png}
+					\end{minipage}
+				\end{figure}
+
+				\centering{后四种情况对应的方案}
 			\end{frame}
 			\begin{frame}\frametitle{$r=5$时}
 				由于$5\times6$的可以填满,所以只需要讨论$c\bmod6$的值,找到一种填的方法使留空的格子数小于6\\
@@ -88,7 +157,30 @@
 				若$c\bmod6=5$,像风车一样放两个$2\times3$和两个$3\times2$,中间留空一格\\
 			\end{frame}
 			\begin{frame}\frametitle{良心插图}
-				(此处应有6张图片)
+				\begin{figure}[htbp]
+					\centering
+					\begin{minipage}[t]{0.48\textwidth}
+						\centering
+						\includegraphics[height=0.5\textwidth]{pictures/4-1.png}
+					\end{minipage}
+					\begin{minipage}[t]{0.48\textwidth}
+						\centering
+						\includegraphics[height=0.5\textwidth]{pictures/4-2.png}
+					\end{minipage}
+				\end{figure}
+				\begin{figure}[htbp]
+					\centering
+					\begin{minipage}[t]{0.48\textwidth}
+						\centering
+						\includegraphics[height=0.5\textwidth]{pictures/4-3.png}
+					\end{minipage}
+					\begin{minipage}[t]{0.48\textwidth}
+						\centering
+						\includegraphics[height=0.5\textwidth]{pictures/4-4.png}
+					\end{minipage}
+				\end{figure}
+
+				\centering{后四种情况对应的方案}
 			\end{frame}
 			\begin{frame}\frametitle{$r=7$时}
 				由于$7\times6$的可以填满,所以只需要讨论$c\bmod6$的值,找到一种填的方法使留空的格子数小于6\\
@@ -100,7 +192,34 @@
 				若$c\bmod6=1$,则$c\ge7$,像风车一样放两个$3\times4$和两个$4\times3$就行\\
 			\end{frame}
 			\begin{frame}\frametitle{良心插图}
-				(此处应有6张图片)
+				\begin{figure}[htbp]
+					\centering
+					\begin{minipage}[t]{0.32\textwidth}
+						\centering
+						\includegraphics[height=0.68\textwidth]{pictures/5-1.png}
+					\end{minipage}
+					\begin{minipage}[t]{0.32\textwidth}
+						\centering
+						\includegraphics[height=0.68\textwidth]{pictures/5-2.png}
+					\end{minipage}
+					\begin{minipage}[t]{0.32\textwidth}
+						\centering
+						\includegraphics[height=0.68\textwidth]{pictures/5-3.png}
+					\end{minipage}
+				\end{figure}
+				\begin{figure}[htbp]
+					\centering
+					\begin{minipage}[t]{0.48\textwidth}
+						\centering
+						\includegraphics[height=0.68\textwidth]{pictures/5-4.png}
+					\end{minipage}
+					\begin{minipage}[t]{0.48\textwidth}
+						\centering
+						\includegraphics[height=0.68\textwidth]{pictures/5-5.png}
+					\end{minipage}
+				\end{figure}
+
+				\centering{后五种情况对应的方案}
 			\end{frame}
 			\begin{frame}\frametitle{$r>7$时}
 				由于r=6时一定可以填满,我们可以先从棋盘中划去若干列,使$2\le c\le7$,再套用上面的证明,于是这样留的空的数目一定$<6$\\
@@ -230,7 +349,7 @@
 				本来想出另外一道题的..但因为太容易搜到题解所以被我毙掉了\\
 				然后正好想到这几天的模拟赛还没出概率期望..就想出一道概率期望\\
 				本来打算出一个无向图随机游走的题..但\textbf{GGN巨神}说那种题太水了..HJQwQ就只好另外找了这道题..结果还是被\textbf{GGN巨神}秒了qwq\\
-				emmm还有就是double运算不开O2好慢...本来打算出到$m\le2times10^6$的..但试了一下直接就TLE了qwq
+				emmm还有就是double运算不开O2好慢...本来打算出到$m\le2\times10^6$的..但试了一下直接就TLE了qwq
 			\end{frame}
 			\begin{frame}\frametitle{完结}
 				祝大家身体健康,再见!
