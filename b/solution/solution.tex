@@ -196,26 +196,26 @@
 					\centering
 					\begin{minipage}[t]{0.32\textwidth}
 						\centering
-						\includegraphics[height=0.68\textwidth]{pictures/5-1.png}
+						\includegraphics[height=0.65\textwidth]{pictures/5-1.png}
 					\end{minipage}
 					\begin{minipage}[t]{0.32\textwidth}
 						\centering
-						\includegraphics[height=0.68\textwidth]{pictures/5-2.png}
+						\includegraphics[height=0.65\textwidth]{pictures/5-2.png}
 					\end{minipage}
 					\begin{minipage}[t]{0.32\textwidth}
 						\centering
-						\includegraphics[height=0.68\textwidth]{pictures/5-3.png}
+						\includegraphics[height=0.65\textwidth]{pictures/5-3.png}
 					\end{minipage}
 				\end{figure}
 				\begin{figure}[htbp]
 					\centering
 					\begin{minipage}[t]{0.48\textwidth}
 						\centering
-						\includegraphics[height=0.68\textwidth]{pictures/5-4.png}
+						\includegraphics[height=0.65\textwidth]{pictures/5-4.png}
 					\end{minipage}
 					\begin{minipage}[t]{0.48\textwidth}
 						\centering
-						\includegraphics[height=0.68\textwidth]{pictures/5-5.png}
+						\includegraphics[height=0.65\textwidth]{pictures/5-5.png}
 					\end{minipage}
 				\end{figure}
 
@@ -265,7 +265,7 @@
 			\end{frame}
 			\begin{frame}\frametitle{改进贪心}
 				于是我们就用堆来维护所有翻转可以获得的最大价值(可能为负),并用双向链表来维护序列\\
-				每次从堆中取出一个点$v_i$,就将其加入答案,将$v_{i-1},v_i,v_{i+1}$从序列中删除,合并为一个新的点,权值为$v_{i-1}+v_{i+1}-v_i$,再插入到序列和双向链表中\\
+				每次从堆中取出一个点$v_i$,就将其加入答案,将$v_{i-1},v_i,v_{i+1}$从序列中删除,合并为一个新的点,权值为$v_{i-1}+v_{i+1}-v_i$,再插入到堆和双向链表中\\
 				一共要进行$\lfloor\frac{n+1}{2}\rfloor$轮这样的操作\\
 				总时间复杂度$O(n\log n)$\\
 				注意特判取出的点$v_i$位于链表两端的情况,以及已经从序列中被删除的情况
@@ -294,8 +294,10 @@
 				我们称这类用堆等数据结构来模拟费用流的增广/退流等操作的问题为\textbf{模拟费用流问题}\\
 			\end{frame}
 			\begin{frame}\frametitle{拓展}
-				什么?为什么MCMF算法每次沿着最大费用路增广是正确的?\\
-				时间原因这里就不再赘述..课后会发证明..有兴趣的同学可以看..
+				什么?为什么MCMF算法每次沿着最小费用路增广是正确的?\\
+				时间原因这里就不再赘述..有兴趣的同学可以看\underline{\href{https://www.luogu.com.cn/blog/Bartholomew/solution-p3381}{巨佬的洛谷题解}}
+				大概思路就是先证明消圈定理:当前流是最小费用流等价于图中无负环\\
+				然后证明若图中一开始不存在负环,那么沿着最小费用路增广后也一定不会出现负环
 			\end{frame}
 		\subsection{后记}
 			\begin{frame}\frametitle{后记}
