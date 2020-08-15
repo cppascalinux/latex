@@ -281,7 +281,11 @@
 				前置知识:网络流,费用流,MCMF算法\\
 				这道题可以抽象成一个费用流问题\\
 				建图方法如下..\\
-				(此处有一张图片)\\
+				\begin{figure}[htbp]
+					\centering
+					\includegraphics[width=0.4\textwidth]{pictures/6.png}
+				\end{figure}
+				
 				中间的每一条边流量上限为1,费用为$v_i$,代表原来的一张卡,有流量就代表要选它\\
 				左右的边流量上限为1,费用为0,保证了相邻两张卡只会选一张\\
 				那么这显然就是一个最大费用流问题\\
@@ -295,7 +299,7 @@
 			\end{frame}
 			\begin{frame}\frametitle{拓展}
 				什么?为什么MCMF算法每次沿着最小费用路增广是正确的?\\
-				时间原因这里就不再赘述..有兴趣的同学可以看\underline{\href{https://www.luogu.com.cn/blog/Bartholomew/solution-p3381}{巨佬的洛谷题解}}
+				时间原因这里就不再赘述..有兴趣的同学可以看\underline{\href{https://www.luogu.com.cn/blog/Bartholomew/solution-p3381}{巨佬的洛谷题解}}\\
 				大概思路就是先证明消圈定理:当前流是最小费用流等价于图中无负环\\
 				然后证明若图中一开始不存在负环,那么沿着最小费用路增广后也一定不会出现负环
 			\end{frame}
